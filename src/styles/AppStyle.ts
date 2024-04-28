@@ -21,9 +21,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
-  toggle: {    
-    color: 'grey',
-    alignSelf: 'center',
+  toggle: {        
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 5,
   },
   picker:{
     flex: 1,

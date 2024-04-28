@@ -83,12 +83,17 @@ const TaskScreen: React.FC = () => {
         style={[toggle ? styles.darkMode : styles.lightMode, styles.appBar]}>
         Expenses Log
       </Text>
-      <Switch
-        style={styles.toggle}
-        trackColor={{true: 'darkgreen', false: 'darkgreen'}}
-        onValueChange={toggleSwitch}
-        value={toggle}
-      />
+      <View style={styles.toggle}>
+        <Text style={toggle ? styles.darkMode : styles.lightMode}>
+          Toggle Theme
+        </Text>
+        <Switch
+          style={styles.toggle}
+          trackColor={{true: 'darkgreen', false: 'darkgreen'}}
+          onValueChange={toggleSwitch}
+          value={toggle}
+        />
+      </View>
       <View style={{flexDirection: 'row'}}>
         <Picker
           style={[styles.picker]}
@@ -176,6 +181,7 @@ const TaskScreen: React.FC = () => {
               price={item.price}
               onDelete={() => handleDelete(index)}
               onEdit={() => handleEdit(index)}
+              isDark={toggle}
             />
           )}
         />
